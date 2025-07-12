@@ -7,7 +7,7 @@ var url = process.env.DB_CONNECTION_STRING;
 router.get("/", (req, res, next) => {
 	MongoClient.connect(url, function (err, db) {
 		if (err) throw err;
-		var dbo = db.db("<database>");
+		var dbo = db.db("dbName");
 		dbo
 			.collection("collection1")
 			.find({})
